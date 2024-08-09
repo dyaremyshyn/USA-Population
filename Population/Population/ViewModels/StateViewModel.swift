@@ -1,5 +1,5 @@
 //
-//  NationViewModel.swift
+//  StateViewModel.swift
 //  Population
 //
 //  Created by Dmytro Yaremyshyn on 09/08/2024.
@@ -8,26 +8,26 @@
 import Foundation
 import Combine
 
-class NationViewModel: ObservableObject {
-    @Published var fetchedData: NationResponse?
+class StateViewModel: ObservableObject {
+    @Published var nation: NationModel?
+    @Published var fetchedData: StateResponse?
     @Published var errorMessage: String? = nil
     private var cancellables = Set<AnyCancellable>()
     
-    private let nationLoader: NationDataLoader
-    private let selection: (NationModel) -> Void
+    private let stateLoader: StateDataLoader
 
-    init(nationLoader: NationDataLoader, selection: @escaping (NationModel) -> Void) {
-        self.nationLoader = nationLoader
-        self.selection = selection
+    init(stateLoader: StateDataLoader, nation: NationModel) {
+        self.nation = nation
+        self.stateLoader = stateLoader
     }
     
     public var title: String {
-        "Population Per Year"
+        "Population for \(nation?.year ?? "") year"
     }
 
     public func loadData() {
-        guard let url = URL(string: APIHelper.nationUrl) else { return }
-        nationLoader.loadData(from: url)
+        guard let url = URL(string: APIHelper.stateUrl + (nation?.year ?? "latest")) else { return }
+        stateLoader.loadData(from: url)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 guard let self = self else { return }
@@ -43,9 +43,4 @@ class NationViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
-    
-    public func selected(nation: NationModel) {
-        selection(nation)
-    }
 }
-

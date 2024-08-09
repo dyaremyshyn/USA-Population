@@ -23,7 +23,7 @@ class NationViewCell: UITableViewCell {
     private lazy var populationLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 12)
+        label.font = .boldSystemFont(ofSize: 14)
         return label
     }()
     
@@ -54,7 +54,8 @@ class NationViewCell: UITableViewCell {
     
     public func updateCell(model: NationModel?) {
         guard let model = model else { return }
-        nationLabel.text = "\(model.nation!) population for \(model.year!) year"
-        populationLabel.text = model.population?.description
+        nationLabel.text = "\(model.nation ?? "") population for year: \(model.year ?? "")"
+        let population = NumberFormatterHelper.numberFormatter.string(from: NSNumber(value: model.population ?? 0))
+        populationLabel.text = "\(population ?? "") residents"
     }
 }

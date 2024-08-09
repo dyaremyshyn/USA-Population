@@ -24,6 +24,14 @@
 		8C3A6EF22C66A98100AD2C06 /* NationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6EF12C66A98100AD2C06 /* NationViewModel.swift */; };
 		8C3A6EF62C66AC8E00AD2C06 /* NationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6EF52C66AC8E00AD2C06 /* NationViewCell.swift */; };
 		8C3A6EF92C66AFDF00AD2C06 /* NationComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6EF82C66AFDF00AD2C06 /* NationComposer.swift */; };
+		8C3A6EFB2C66B85A00AD2C06 /* StateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6EFA2C66B85A00AD2C06 /* StateViewController.swift */; };
+		8C3A6EFD2C66B8A400AD2C06 /* StateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6EFC2C66B8A300AD2C06 /* StateViewModel.swift */; };
+		8C3A6EFF2C66B8FC00AD2C06 /* StateDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6EFE2C66B8FC00AD2C06 /* StateDataLoader.swift */; };
+		8C3A6F012C66B92500AD2C06 /* StateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6F002C66B92500AD2C06 /* StateResponse.swift */; };
+		8C3A6F032C66B95900AD2C06 /* StateNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6F022C66B95900AD2C06 /* StateNetworkService.swift */; };
+		8C3A6F052C66DE5E00AD2C06 /* StateViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6F042C66DE5E00AD2C06 /* StateViewCell.swift */; };
+		8C3A6F072C66E10F00AD2C06 /* StateComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6F062C66E10F00AD2C06 /* StateComposer.swift */; };
+		8C3A6F0A2C66E2DC00AD2C06 /* NumberFormatterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6F092C66E2DC00AD2C06 /* NumberFormatterHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +73,14 @@
 		8C3A6EF12C66A98100AD2C06 /* NationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationViewModel.swift; sourceTree = "<group>"; };
 		8C3A6EF52C66AC8E00AD2C06 /* NationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationViewCell.swift; sourceTree = "<group>"; };
 		8C3A6EF82C66AFDF00AD2C06 /* NationComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationComposer.swift; sourceTree = "<group>"; };
+		8C3A6EFA2C66B85A00AD2C06 /* StateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViewController.swift; sourceTree = "<group>"; };
+		8C3A6EFC2C66B8A300AD2C06 /* StateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViewModel.swift; sourceTree = "<group>"; };
+		8C3A6EFE2C66B8FC00AD2C06 /* StateDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDataLoader.swift; sourceTree = "<group>"; };
+		8C3A6F002C66B92500AD2C06 /* StateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateResponse.swift; sourceTree = "<group>"; };
+		8C3A6F022C66B95900AD2C06 /* StateNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateNetworkService.swift; sourceTree = "<group>"; };
+		8C3A6F042C66DE5E00AD2C06 /* StateViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViewCell.swift; sourceTree = "<group>"; };
+		8C3A6F062C66E10F00AD2C06 /* StateComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateComposer.swift; sourceTree = "<group>"; };
+		8C3A6F092C66E2DC00AD2C06 /* NumberFormatterHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatterHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +166,7 @@
 				8C3A6EE22C66A40900AD2C06 /* NationModel.swift */,
 				8C3A6EE42C66A51E00AD2C06 /* StateModel.swift */,
 				8C3A6EED2C66A79100AD2C06 /* NationResponse.swift */,
+				8C3A6F002C66B92500AD2C06 /* StateResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				8C3A6EF12C66A98100AD2C06 /* NationViewModel.swift */,
+				8C3A6EFC2C66B8A300AD2C06 /* StateViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -193,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				8C3A6EB02C66992E00AD2C06 /* NationViewController.swift */,
+				8C3A6EFA2C66B85A00AD2C06 /* StateViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -203,6 +222,7 @@
 				8C3A6EE82C66A60900AD2C06 /* Helpers */,
 				8C3A6EE72C66A60100AD2C06 /* Protocols */,
 				8C3A6EEF2C66A82200AD2C06 /* NationNetworkService.swift */,
+				8C3A6F022C66B95900AD2C06 /* StateNetworkService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -211,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				8C3A6EEB2C66A74900AD2C06 /* NationDataLoader.swift */,
+				8C3A6EFE2C66B8FC00AD2C06 /* StateDataLoader.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -226,6 +247,7 @@
 		8C3A6EF32C66AC7000AD2C06 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8C3A6F082C66E2C500AD2C06 /* Helpers */,
 				8C3A6EF42C66AC7A00AD2C06 /* Cells */,
 			);
 			path = Views;
@@ -235,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				8C3A6EF52C66AC8E00AD2C06 /* NationViewCell.swift */,
+				8C3A6F042C66DE5E00AD2C06 /* StateViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -243,8 +266,17 @@
 			isa = PBXGroup;
 			children = (
 				8C3A6EF82C66AFDF00AD2C06 /* NationComposer.swift */,
+				8C3A6F062C66E10F00AD2C06 /* StateComposer.swift */,
 			);
 			path = Composers;
+			sourceTree = "<group>";
+		};
+		8C3A6F082C66E2C500AD2C06 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8C3A6F092C66E2DC00AD2C06 /* NumberFormatterHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,16 +410,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C3A6EEC2C66A74900AD2C06 /* NationDataLoader.swift in Sources */,
+				8C3A6F032C66B95900AD2C06 /* StateNetworkService.swift in Sources */,
 				8C3A6EF62C66AC8E00AD2C06 /* NationViewCell.swift in Sources */,
 				8C3A6EEA2C66A63300AD2C06 /* APIHelper.swift in Sources */,
 				8C3A6EE32C66A40900AD2C06 /* NationModel.swift in Sources */,
 				8C3A6EB12C66992E00AD2C06 /* NationViewController.swift in Sources */,
+				8C3A6EFF2C66B8FC00AD2C06 /* StateDataLoader.swift in Sources */,
+				8C3A6F0A2C66E2DC00AD2C06 /* NumberFormatterHelper.swift in Sources */,
 				8C3A6EAD2C66992E00AD2C06 /* AppDelegate.swift in Sources */,
+				8C3A6EFD2C66B8A400AD2C06 /* StateViewModel.swift in Sources */,
+				8C3A6EFB2C66B85A00AD2C06 /* StateViewController.swift in Sources */,
+				8C3A6F072C66E10F00AD2C06 /* StateComposer.swift in Sources */,
 				8C3A6EAF2C66992E00AD2C06 /* SceneDelegate.swift in Sources */,
 				8C3A6EF02C66A82200AD2C06 /* NationNetworkService.swift in Sources */,
 				8C3A6EF92C66AFDF00AD2C06 /* NationComposer.swift in Sources */,
 				8C3A6EF22C66A98100AD2C06 /* NationViewModel.swift in Sources */,
+				8C3A6F052C66DE5E00AD2C06 /* StateViewCell.swift in Sources */,
 				8C3A6EE52C66A51E00AD2C06 /* StateModel.swift in Sources */,
+				8C3A6F012C66B92500AD2C06 /* StateResponse.swift in Sources */,
 				8C3A6EEE2C66A79100AD2C06 /* NationResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

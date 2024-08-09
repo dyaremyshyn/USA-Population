@@ -26,7 +26,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func navigateToSection(for nation: NationModel) {
-        navigationController.pushViewController(UIViewController(), animated: true)
+        let stateViewController = StateComposer.stateComposedWith(stateLoader: StateNetworkService(), nation: nation)
+        navigationController.pushViewController(stateViewController, animated: true)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

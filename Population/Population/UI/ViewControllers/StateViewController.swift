@@ -1,5 +1,5 @@
 //
-//  NationViewController.swift
+//  StateViewController.swift
 //  Population
 //
 //  Created by Dmytro Yaremyshyn on 09/08/2024.
@@ -8,10 +8,10 @@
 import UIKit
 import Combine
 
-public class NationViewController: UITableViewController {
-
+public class StateViewController: UITableViewController {
+    
     private var cancellables = Set<AnyCancellable>()
-    var viewModel: NationViewModel? {
+    var viewModel: StateViewModel? {
         didSet { bind() }
     }
     
@@ -43,29 +43,24 @@ public class NationViewController: UITableViewController {
         title = viewModel?.title
         view.backgroundColor = .systemBackground
         
-        tableView.register(NationViewCell.self, forCellReuseIdentifier: NationViewCell.identifier)
+        tableView.register(StateViewCell.self, forCellReuseIdentifier: StateViewCell.identifier)
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
     }
 }
 
 //MARK: TableView DataSource
-extension NationViewController {
+extension StateViewController {
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.fetchedData?.data?.count ?? 0
     }
 
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: NationViewCell.identifier, for: indexPath) as? NationViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: StateViewCell.identifier, for: indexPath) as? StateViewCell else {
             return UITableViewCell()
         }
         cell.updateCell(model: viewModel?.fetchedData?.data?[indexPath.row])
         return cell
-    }
-
-    public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let selectedNation = viewModel?.fetchedData?.data?[indexPath.row] else { return }
-        viewModel?.selected(nation: selectedNation)
     }
 }
