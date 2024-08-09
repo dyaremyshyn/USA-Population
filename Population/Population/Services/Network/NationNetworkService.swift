@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SportsNetworkService: NationDataLoader {
+struct NationNetworkService: NationDataLoader {
     
     func loadData(from url: URL) -> NationDataLoader.Result {
         return URLSession.shared

@@ -11,12 +11,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    private lazy var navigationController = UINavigationController(
+        rootViewController: NationComposer.nationComposedWith(
+            nationLoader: NationNetworkService(),
+            selection: navigateToSection
+        )
+    )
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = ViewController()
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+    }
+    
+    private func navigateToSection(for nation: NationModel) {
+        navigationController.pushViewController(UIViewController(), animated: true)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
