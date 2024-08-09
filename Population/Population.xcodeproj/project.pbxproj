@@ -17,6 +17,10 @@
 		8C3A6ED02C66993000AD2C06 /* PopulationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6ECF2C66993000AD2C06 /* PopulationUITestsLaunchTests.swift */; };
 		8C3A6EE32C66A40900AD2C06 /* NationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6EE22C66A40900AD2C06 /* NationModel.swift */; };
 		8C3A6EE52C66A51E00AD2C06 /* StateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6EE42C66A51E00AD2C06 /* StateModel.swift */; };
+		8C3A6EEA2C66A63300AD2C06 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6EE92C66A63300AD2C06 /* APIHelper.swift */; };
+		8C3A6EEC2C66A74900AD2C06 /* NationDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6EEB2C66A74900AD2C06 /* NationDataLoader.swift */; };
+		8C3A6EEE2C66A79100AD2C06 /* NationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6EED2C66A79100AD2C06 /* NationResponse.swift */; };
+		8C3A6EF02C66A82200AD2C06 /* NationNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6EEF2C66A82200AD2C06 /* NationNetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		8C3A6ECF2C66993000AD2C06 /* PopulationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulationUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8C3A6EE22C66A40900AD2C06 /* NationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationModel.swift; sourceTree = "<group>"; };
 		8C3A6EE42C66A51E00AD2C06 /* StateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateModel.swift; sourceTree = "<group>"; };
+		8C3A6EE92C66A63300AD2C06 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
+		8C3A6EEB2C66A74900AD2C06 /* NationDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationDataLoader.swift; sourceTree = "<group>"; };
+		8C3A6EED2C66A79100AD2C06 /* NationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationResponse.swift; sourceTree = "<group>"; };
+		8C3A6EEF2C66A82200AD2C06 /* NationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationNetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +143,7 @@
 			children = (
 				8C3A6EE22C66A40900AD2C06 /* NationModel.swift */,
 				8C3A6EE42C66A51E00AD2C06 /* StateModel.swift */,
+				8C3A6EED2C66A79100AD2C06 /* NationResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -142,6 +151,7 @@
 		8C3A6EDD2C66996900AD2C06 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				8C3A6EE62C66A5F900AD2C06 /* Network */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -176,6 +186,32 @@
 				8C3A6EB02C66992E00AD2C06 /* ViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8C3A6EE62C66A5F900AD2C06 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8C3A6EE82C66A60900AD2C06 /* Helpers */,
+				8C3A6EE72C66A60100AD2C06 /* Protocols */,
+				8C3A6EEF2C66A82200AD2C06 /* NationNetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8C3A6EE72C66A60100AD2C06 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8C3A6EEB2C66A74900AD2C06 /* NationDataLoader.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8C3A6EE82C66A60900AD2C06 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8C3A6EE92C66A63300AD2C06 /* APIHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,11 +344,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C3A6EEC2C66A74900AD2C06 /* NationDataLoader.swift in Sources */,
+				8C3A6EEA2C66A63300AD2C06 /* APIHelper.swift in Sources */,
 				8C3A6EE32C66A40900AD2C06 /* NationModel.swift in Sources */,
 				8C3A6EB12C66992E00AD2C06 /* ViewController.swift in Sources */,
 				8C3A6EAD2C66992E00AD2C06 /* AppDelegate.swift in Sources */,
 				8C3A6EAF2C66992E00AD2C06 /* SceneDelegate.swift in Sources */,
+				8C3A6EF02C66A82200AD2C06 /* NationNetworkService.swift in Sources */,
 				8C3A6EE52C66A51E00AD2C06 /* StateModel.swift in Sources */,
+				8C3A6EEE2C66A79100AD2C06 /* NationResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

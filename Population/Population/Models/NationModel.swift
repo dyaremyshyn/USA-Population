@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NationModel {
+struct NationModel: Decodable {
     let id: String?
     let nation: String?
     let yearID: Int?

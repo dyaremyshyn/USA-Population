@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct StateModel {
+struct StateModel: Decodable {
     let id: String?
     let state: String?
     let yearID: Int?
