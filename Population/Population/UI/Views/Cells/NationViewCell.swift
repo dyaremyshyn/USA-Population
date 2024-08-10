@@ -27,6 +27,12 @@ class NationViewCell: UITableViewCell {
         return label
     }()
     
+    private lazy var arrowImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(systemName: "arrow.forward.circle"))
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
@@ -41,6 +47,7 @@ class NationViewCell: UITableViewCell {
         selectionStyle = .none
         contentView.addSubview(nationLabel)
         contentView.addSubview(populationLabel)
+        contentView.addSubview(arrowImageView)
                 
         nationLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8).isActive = true
         nationLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
@@ -50,6 +57,11 @@ class NationViewCell: UITableViewCell {
         populationLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
         populationLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
         populationLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8).isActive = true
+        
+        arrowImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        arrowImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
+        arrowImageView.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        arrowImageView.heightAnchor.constraint(equalToConstant: 25).isActive = true
     }
     
     public func updateCell(model: NationModel?) {
