@@ -15,10 +15,21 @@ public class NationViewController: UITableViewController {
         didSet { bind() }
     }
     
+    lazy var errorView: ErrorView = {
+        let view = ErrorView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         viewModel?.loadData()
+    }
+    
+    public override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.sizeTableHeaderToFit()
     }
 
     private func bind() {
@@ -34,7 +45,7 @@ public class NationViewController: UITableViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] errorMessage in
                 guard let self, let message = errorMessage else { return }
-                print(message)
+                self.display(errorMessage: message)
             }
             .store(in: &cancellables)
     }
@@ -46,6 +57,13 @@ public class NationViewController: UITableViewController {
         tableView.register(NationViewCell.self, forCellReuseIdentifier: NationViewCell.identifier)
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.tableHeaderView = errorView.makeContainer()
+        
+        errorView.onHide = { [weak self] in
+            self?.tableView.beginUpdates()
+            self?.tableView.sizeTableHeaderToFit()
+            self?.tableView.endUpdates()
+        }
     }
 }
 
@@ -67,5 +85,16 @@ extension NationViewController {
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let selectedNation = viewModel?.fetchedData?.data?[indexPath.row] else { return }
         viewModel?.selected(nation: selectedNation)
+    }
+}
+
+//MARK: Display Weather Error protocol
+extension NationViewController: ErrorViewDelegate {
+    // Displaying error message in the header table view
+    public func display(errorMessage: String?) {
+        errorView.message = errorMessage
+        if errorMessage != nil {
+            tableView.reloadData()
+        }
     }
 }

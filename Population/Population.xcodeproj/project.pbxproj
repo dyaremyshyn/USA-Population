@@ -32,6 +32,10 @@
 		8C3A6F052C66DE5E00AD2C06 /* StateViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6F042C66DE5E00AD2C06 /* StateViewCell.swift */; };
 		8C3A6F072C66E10F00AD2C06 /* StateComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6F062C66E10F00AD2C06 /* StateComposer.swift */; };
 		8C3A6F0A2C66E2DC00AD2C06 /* NumberFormatterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6F092C66E2DC00AD2C06 /* NumberFormatterHelper.swift */; };
+		8C3A6F0D2C66EAF800AD2C06 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6F0C2C66EAF800AD2C06 /* ErrorView.swift */; };
+		8C3A6F0F2C66EB6500AD2C06 /* UITableView+HeaderSizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6F0E2C66EB6500AD2C06 /* UITableView+HeaderSizing.swift */; };
+		8C3A6F112C66EBB100AD2C06 /* UIView+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6F102C66EBB100AD2C06 /* UIView+Container.swift */; };
+		8C3A6F142C66EDF000AD2C06 /* ErrorViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A6F132C66EDF000AD2C06 /* ErrorViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +85,10 @@
 		8C3A6F042C66DE5E00AD2C06 /* StateViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViewCell.swift; sourceTree = "<group>"; };
 		8C3A6F062C66E10F00AD2C06 /* StateComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateComposer.swift; sourceTree = "<group>"; };
 		8C3A6F092C66E2DC00AD2C06 /* NumberFormatterHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatterHelper.swift; sourceTree = "<group>"; };
+		8C3A6F0C2C66EAF800AD2C06 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		8C3A6F0E2C66EB6500AD2C06 /* UITableView+HeaderSizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+HeaderSizing.swift"; sourceTree = "<group>"; };
+		8C3A6F102C66EBB100AD2C06 /* UIView+Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Container.swift"; sourceTree = "<group>"; };
+		8C3A6F132C66EDF000AD2C06 /* ErrorViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +255,8 @@
 		8C3A6EF32C66AC7000AD2C06 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8C3A6F122C66EDD500AD2C06 /* Delegates */,
+				8C3A6F0B2C66EADF00AD2C06 /* Components */,
 				8C3A6F082C66E2C500AD2C06 /* Helpers */,
 				8C3A6EF42C66AC7A00AD2C06 /* Cells */,
 			);
@@ -275,8 +285,26 @@
 			isa = PBXGroup;
 			children = (
 				8C3A6F092C66E2DC00AD2C06 /* NumberFormatterHelper.swift */,
+				8C3A6F0E2C66EB6500AD2C06 /* UITableView+HeaderSizing.swift */,
+				8C3A6F102C66EBB100AD2C06 /* UIView+Container.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8C3A6F0B2C66EADF00AD2C06 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8C3A6F0C2C66EAF800AD2C06 /* ErrorView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		8C3A6F122C66EDD500AD2C06 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				8C3A6F132C66EDF000AD2C06 /* ErrorViewDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,7 +441,10 @@
 				8C3A6F032C66B95900AD2C06 /* StateNetworkService.swift in Sources */,
 				8C3A6EF62C66AC8E00AD2C06 /* NationViewCell.swift in Sources */,
 				8C3A6EEA2C66A63300AD2C06 /* APIHelper.swift in Sources */,
+				8C3A6F0D2C66EAF800AD2C06 /* ErrorView.swift in Sources */,
 				8C3A6EE32C66A40900AD2C06 /* NationModel.swift in Sources */,
+				8C3A6F112C66EBB100AD2C06 /* UIView+Container.swift in Sources */,
+				8C3A6F0F2C66EB6500AD2C06 /* UITableView+HeaderSizing.swift in Sources */,
 				8C3A6EB12C66992E00AD2C06 /* NationViewController.swift in Sources */,
 				8C3A6EFF2C66B8FC00AD2C06 /* StateDataLoader.swift in Sources */,
 				8C3A6F0A2C66E2DC00AD2C06 /* NumberFormatterHelper.swift in Sources */,
@@ -424,6 +455,7 @@
 				8C3A6EAF2C66992E00AD2C06 /* SceneDelegate.swift in Sources */,
 				8C3A6EF02C66A82200AD2C06 /* NationNetworkService.swift in Sources */,
 				8C3A6EF92C66AFDF00AD2C06 /* NationComposer.swift in Sources */,
+				8C3A6F142C66EDF000AD2C06 /* ErrorViewDelegate.swift in Sources */,
 				8C3A6EF22C66A98100AD2C06 /* NationViewModel.swift in Sources */,
 				8C3A6F052C66DE5E00AD2C06 /* StateViewCell.swift in Sources */,
 				8C3A6EE52C66A51E00AD2C06 /* StateModel.swift in Sources */,
@@ -608,6 +640,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -638,6 +671,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

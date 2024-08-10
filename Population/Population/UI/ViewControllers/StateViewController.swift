@@ -15,10 +15,21 @@ public class StateViewController: UITableViewController {
         didSet { bind() }
     }
     
+    lazy var errorView: ErrorView = {
+        let view = ErrorView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         viewModel?.loadData()
+    }
+    
+    public override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.sizeTableHeaderToFit()
     }
 
     private func bind() {
@@ -34,7 +45,7 @@ public class StateViewController: UITableViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] errorMessage in
                 guard let self, let message = errorMessage else { return }
-                print(message)
+                self.display(errorMessage: message)
             }
             .store(in: &cancellables)
     }
@@ -46,6 +57,13 @@ public class StateViewController: UITableViewController {
         tableView.register(StateViewCell.self, forCellReuseIdentifier: StateViewCell.identifier)
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.tableHeaderView = errorView.makeContainer()
+        
+        errorView.onHide = { [weak self] in
+            self?.tableView.beginUpdates()
+            self?.tableView.sizeTableHeaderToFit()
+            self?.tableView.endUpdates()
+        }
     }
 }
 
@@ -62,5 +80,16 @@ extension StateViewController {
         }
         cell.updateCell(model: viewModel?.fetchedData?.data?[indexPath.row])
         return cell
+    }
+}
+
+//MARK: Display Weather Error protocol
+extension StateViewController: ErrorViewDelegate {
+    // Displaying error message in the header table view
+    public func display(errorMessage: String?) {
+        errorView.message = errorMessage
+        if errorMessage != nil {
+            tableView.reloadData()
+        }
     }
 }

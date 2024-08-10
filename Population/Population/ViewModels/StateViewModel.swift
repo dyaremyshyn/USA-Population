@@ -22,7 +22,7 @@ class StateViewModel: ObservableObject {
     }
     
     public var title: String {
-        "Population for \(nation?.year ?? "") year"
+        "Population in \(nation?.year ?? "")"
     }
 
     public func loadData() {
